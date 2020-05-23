@@ -1,0 +1,93 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+<div class="navbar">
+  <img id="pict" src="{% static "gambar/home.png" %}" alt=""/>
+</div>
+
+<div class="persyaratan">
+    <h1>Persyaratan</h1>
+    <h4>1. Halaman Preliminaris (Pendahuluan)</h4>
+    <p> a. Cover Buku yang memuat judul dan
+        penulis<br>
+        b. Hak Cipta (copyright) yang memuat judul,
+        identitas penerbit, penulis, dan tim yang
+        terlibat (editor, layouter,desainer cover)<br>
+        c. Prakata (penulis dan/atau pimpinan IAIN
+        Surakarta Press) yang disiapkan oleh
+        penulis.<br>
+        d.Kata Pengantar, ditulis oleh ahli atau pihak
+        penerbit yang menunjukkan komentar
+        terhadap buku yang diterbitkan. Bagian ini
+        bersifat optional, tidak wajib ada.<br>
+        e. Daftar Isi, yang disesuaikan dengan isi
+        naskah sebenarnya (harus sama, dari bab,
+        subbab, dan nomornya).<br>
+        f. Daftar gambar/tabel (jika ada)<br></p>
+
+      <h4>2. Isi</h4>
+      <p>a. Isi buku disesuaikan dengan jenis naskah.
+      Naskah Buku Bahan Ajar harus:<br>
+      disesuaikan dengan silabi yang telah
+      ditetapkan oleh IAIN Surakarta; pada akhir
+      bab wajib ditambah subbab yang berisi
+      Rangkuman, Latihan Soal, serta Kunci
+      Soal.<br>
+      Buku Adaptasi, Bab I memuat: a. Latar
+      Belakang; b. Posisi Studi Terdahulu; c.
+      Penggunaan Teori; d. Metode; e. Alur Buku.<br>
+      b. Penomoran teks harus konsiten dan sesuai
+      aturan, seperti A, 1, a, (1)<br></p>
+
+      <h4>3.Halaman Postliminary (Penyudahan)</h4>
+      <p>a. Daftar Pustaka<br>
+      Penulisan daftar pustaka di IAIN Surakarta
+      Press menggunakan Harvard Style<br>
+      b. Glosarium<br>
+      Penulis menyajikan daftar kata-kata yang
+      dianggap penting dan sulit dipahami dalam
+      buku. Kata-kata tersebut diberi keterangan
+      atau definisi sehingga memudahkan
+      pembaca dalam memahami buku.<br>
+      c. Indeks<br>
+      Disebut juga dengan komponen penjurus
+      halaman, berfungsi untuk membantu
+      pembaca menemukan informasi penting
+      terkait konten buku secara cepat dengan
+      halaman-halaman yang tercantum.
+      9 Panduan Penerbitan Buku di IAIN Surakarta Press|
+      LP2M IAIN Surakarta<br>
+      d. Tentang Penulis<br>
+      Penulis menjelaskan curriculum vitae
+      minimal 1 halaman.<br>
+      e. Sinopsis<br>
+      Penjelasan mengenai pokok pembahasan
+      dan hal menarik dari buku ini, nantinya akan ditampilkan pada cover belakang buku.</p>
+</div>
+
+<div class="keterangan">
+  <h1>Teknis Penulisan</h1>
+    <p>1. Font yang digunakan adalah Times New Roman, ukuran 12, dan spasi 1,5 tanpa Add Space Before/After Paragraph<br>
+       2. Ukuran kertas A4 dangan margin top: 4 cm, right: 4 cm, bottom: 3 cm, dan left: 4 cm.<br>
+       3. Referesi dalam naskah menggunakan Footnote<br>
+       4. Ilustrasi, seperti gambar, foto, tabel, diagram, skema, grafik, dan lainnya, wajib diberi nomor dan disebutkan sumberny.<br>
+       5. Minimal halaman 96 (6×16) untuk Buku Bahan Ajar; 112 (7×16) untuk buku adaptasi dan populer.
+   </p>
+</div>
+
+<div class="clickkirim">
+    <a id="button" class="button">Kirim Naskah</a>
+</div>
+{% block content %}
+<div class="bg-modal">
+  <div class="modal-content">
+    <div class="close">+</div>
+        <h1 align="center">KIRIM NASKAH</h1>
+        <form class="inputdata" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form }}
+        </form>
+  </div>
+</div>
+{% endblock %}
+
+<script src="{% static 'js/loadjs.js' %}" type="text/javascript"></script>
